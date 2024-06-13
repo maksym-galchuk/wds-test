@@ -1,2 +1,5 @@
 **/node_modules/**
 **/.idea/**
+**/themes/*/assets/css/*
+**/themes/*/assets/js/*
+**/themes/*/assets/fonts/*
