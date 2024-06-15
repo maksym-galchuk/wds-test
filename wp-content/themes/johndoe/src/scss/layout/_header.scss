@@ -10,14 +10,14 @@
 
 
   &__container {
-    max-width: 1820px;
+    max-width: 1780px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-inline: auto;
   }
 
-  &__logo {
+  .custom-logo-link {
     img {
       height: 40px;
     }

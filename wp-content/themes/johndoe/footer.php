@@ -1,7 +1,5 @@
 <footer class="footer">
-  <a class="footer__logo" href="<?php echo home_url(); ?>">
-    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" alt="John Doe">
-  </a>
+  <?php the_custom_logo( ); ?>
   <?php
   wp_nav_menu(
     [

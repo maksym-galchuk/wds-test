@@ -36,6 +36,10 @@ h1, h2, h3 {
   font-family: "Italiana", serif;
   font-weight: 400;
   letter-spacing: .04em;
+
+  span {
+    color: var(--color-accent);
+  }
 }
 
 h1 {

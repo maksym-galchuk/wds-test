@@ -3,31 +3,59 @@
 
   <section class="hero">
     <div class="hero__container">
-      <h1 class="hero__title">John Doe</h1>
-      <p class="hero__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dolor magna risus sed. Et dictumst vel.</p>
-      <a href="#" class="hero__button btn">Free Seo Consulting Training</a>
+      <h1 class="hero__title">
+        <?php
+        $title = get_field('hero_title');
+        if(isset($title["green"])) {
+          $title["green"] = "<span>" . $title["green"] . "</span>";
+        }
+        echo join(" ", get_field('hero_title'));
+        ?>
+      </h1>
+      <p class="hero__description">
+        <?= get_field('hero_text'); ?>
+      </p>
+      <a href="<?= get_field('hero_button_link'); ?>" class="hero__button btn">
+        <?= get_field('hero_button_label'); ?>
+      </a>
     </div>
     <div class="hero__image">
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/hero-img.png" alt="Hero Background Image">
+      <img src="<?= get_field('hero_image'); ?>" alt="Hero Background Image">
     </div>
   </section>
   <section class="seo" id="about">
     <div class="seo__container">
       <div class="seo__text">
-        <h2 class="seo__title">Superstar SEO</h2>
+        <h2 class="seo__title">
+          <?php
+          $title = get_field('seo_title');
+          if(isset($title["green"])) {
+            $title["green"] = "<span>" . $title["green"] . "</span>";
+          }
+          echo join(" ", $title);
+          ?>
+        </h2>
         <p class="seo__description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam amet, platea diam rhoncus, sem tortor, turpis ac tincidunt. Nisi adipiscing a suspendisse justo eleifend volutpat et vitae ac. Consequat in mi iaculis hendrerit mauris mattis. Lacus risus amet at magna urna. Felis nec orci a, quis nullam vel sem nunc enim. Sit mi tellus eget commodo augue.
+          <?= get_field('seo_text'); ?>
         </p>
       </div>
       <div class="seo__image">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/seo-img.png" alt="SEO Image">
+        <img src="<?= get_field('seo_image'); ?>" alt="SEO Image">
       </div>
     </div>
   </section>
   <section class="testimonials container" id="testimonials">
     <div class="splide">
       <div class="splide__top">
-        <h2 class="splide__title">What My <span>Clients Say</h2>
+        <h2 class="splide__title">
+          <?php
+          $title = get_field('testimonials_title');
+          if(isset($title["green"])) {
+            $title["green"] = "<span>" . $title["green"] . "</span>";
+          }
+          echo join(" ",$title);
+          ?>
+        </h2>
         <div class="splide__arrows">
           <button class="splide__arrow arrow-btn splide__arrow--prev">
             <svg width="20" height="20" viewBox="0 0 20 20">
@@ -43,61 +71,61 @@
       </div>
       <div class="splide__track">
         <ul class="splide__list">
-          <li class="splide__slide">
-            <div class="splide__slide-image">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/testimonial-img.jpg" alt="Testimonial Image">
-            </div>
-            <blockquote class="splide__slide-quote">
-              <p class="splide__slide-quote-text font-italic-lg">“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Adipiscing diam, tortor, egestas euismod neque venenatis, viverra. Ante nibh morbi egestas quam lorem ipsum. Eget sit praesent a laoreet. Mi, phasellus quis mauris sollicitudin non. Iaculis ac duis mauris enim. “</p>
-              <footer>
-                <p class="splide__slide-quote-author font-bold">Frank Hardy</p>
-                <p class="splide__slide-quote-pos font-sm">Your Marketing Crew CEO</p>
-              </footer>
-            </blockquote>
-          </li>
-          <li class="splide__slide">
-            <div class="splide__slide-image">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/testimonial-img.jpg" alt="Testimonial Image">
-            </div>
-            <blockquote class="splide__slide-quote">
-              <p class="splide__slide-quote-text font-italic-lg">“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Adipiscing diam, tortor, egestas euismod neque venenatis, viverra. Ante nibh morbi egestas quam lorem ipsum. Eget sit praesent a laoreet. Mi, phasellus quis mauris sollicitudin non. Iaculis ac duis mauris enim. “</p>
-              <footer>
-                <p class="splide__slide-quote-author font-bold">Frank Hardy</p>
-                <p class="splide__slide-quote-pos font-sm">Your Marketing Crew CEO</p>
-              </footer>
-            </blockquote>
-          </li>
-          <li class="splide__slide">
-            <div class="splide__slide-image">
-              <img src="<?php echo get_template_directory_uri(); ?>/assets/images/testimonial-img.jpg" alt="Testimonial Image">
-            </div>
-            <blockquote class="splide__slide-quote">
-              <p class="splide__slide-quote-text font-italic-lg">“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Adipiscing diam, tortor, egestas euismod neque venenatis, viverra. Ante nibh morbi egestas quam lorem ipsum. Eget sit praesent a laoreet. Mi, phasellus quis mauris sollicitudin non. Iaculis ac duis mauris enim. “</p>
-              <footer>
-                <p class="splide__slide-quote-author font-bold">Frank Hardy</p>
-                <p class="splide__slide-quote-pos font-sm">Your Marketing Crew CEO</p>
-              </footer>
-            </blockquote>
-          </li>
+          <?php $testimonials = get_field('testimonials_list');
+          foreach($testimonials as $testimonial) : ?>
+            <li class="splide__slide">
+              <div class="splide__slide-image">
+                <img src="<?= get_field('image', $testimonial); ?>" alt="Testimonial Image">
+              </div>
+              <blockquote class="splide__slide-quote">
+                <p class="splide__slide-quote-text font-italic-lg">
+                  <?= get_field('text', $testimonial); ?>
+                </p>
+                <footer>
+                  <p class="splide__slide-quote-author font-bold">
+                    <?= get_field('author', $testimonial); ?>
+                  </p>
+                  <p class="splide__slide-quote-pos font-sm">
+                    <?= get_field('position', $testimonial); ?>
+                  </p>
+                </footer>
+              </blockquote>
+            </li>
+          <?php endforeach; ?>
         </ul>
       </div>
     </div>
   </section>
-<section class="cta" id="contact">
-  <div class="container cta__container">
-    <div class="cta__col">
-      <h2 class="cta__title">Get in Touch</h2>
-      <div class="cta__bottom">
-        <a href="mailto:hello@domainexample.com" class="cta__link">hello@domainexample.com</a>
-        <p class="cta__address">237 Haylee Islands Suite 960</p>
-      </div>
-    </div>
-    <div class="cta__col">
-      <?= do_shortcode('[hf_form slug="contact"]'); ?>
-    </div>
+  <section class="cta" id="contact">
+    <div class="container cta__container">
+      <div class="cta__col">
+        <h2 class="cta__title">
+          <?php
+          $title = get_field('cta_title');
+          if(isset($title["green"])) {
+            $title["green"] = "<span>" . $title["green"] . "</span>";
+          }
+          echo join(" ",$title);
+          ?>
+        </h2>
+        <div class="cta__bottom">
 
-  </div>
-</section>
+          <a href="mailto:<?= get_field('cta_email'); ?>" class="cta__link">
+            <?php if (get_field('cta_email')) {
+              echo get_field('cta_email');
+            } else {
+              echo get_option('admin_email');
+            } ?>
+          </a>
+          <p class="cta__address"><?= get_field('cta_address'); ?></p>
+        </div>
+      </div>
+      <div class="cta__col">
+        <?= do_shortcode('[hf_form slug="contact"]'); ?>
+      </div>
+
+    </div>
+  </section>
   <svg style="display: none">
     <defs>
       <symbol id="arrow-left" viewBox="0 0 20 20">

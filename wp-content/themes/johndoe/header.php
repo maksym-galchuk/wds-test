@@ -5,14 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <?php wp_head(); ?>
-  <title>Document</title>
+  <title><?php bloginfo('name'); ?></title>
 </head>
 <body <?php body_class(); ?>>
 <header class="header">
   <div class="header__container">
-    <a class="header__logo" href="<?php echo home_url(); ?>">
-      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" alt="John Doe">
-    </a>
+    <?php the_custom_logo( ); ?>
     <?php
     wp_nav_menu(
       [
