@@ -12,7 +12,7 @@
   );
   ?>
   <div class="footer__copy font-sm">
-    Copyright © 2021 All right reserved
+    <?= get_field('copy_text'); ?>
   </div>
 </footer>
 <?php wp_footer(); ?>
