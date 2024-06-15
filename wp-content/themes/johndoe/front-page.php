@@ -126,7 +126,7 @@
       ]
     );
   ?>
-  <div class="footer__copy">
+  <div class="footer__copy font-sm">
     Copyright © 2021 All right reserved
   </div>
 </footer>
