@@ -13,4 +13,19 @@
     margin: 70px 0;
     gap: 20px;
   }
+
+  @media screen and (max-width: 768px) {
+    margin: 50px 0 20px;
+    &__logo {
+      img {
+        height: 50px;
+      }
+    }
+
+    &__menu-list {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+  }
 }

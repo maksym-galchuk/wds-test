@@ -5,9 +5,9 @@ export default class Header {
     this.hero = document.querySelector('.hero');
     this.timeout = null;
     this.isDesktop = window.innerWidth > 1024;
-    this.itemsWithSubmenu = document.querySelectorAll('.menu-item-has-children');
-    this.allMenuItems = document.querySelectorAll('.menu-item');
-    this.burger = document.querySelector(".burger");
+    this.itemsWithSubmenu = document.querySelectorAll('.header .menu-item-has-children');
+    this.allMenuItems = document.querySelectorAll('.header .menu-item');
+    this.burger = document.querySelector(".header .burger");
 
     this.init();
   }
@@ -32,10 +32,21 @@ export default class Header {
   }
 
   handleMenuItemClick = (e) => {
-    if (this.isDesktop) return;
+    console.log("hi")
     const menuItem = e.target.closest('.menu-item');
-    if (menuItem.classList.contains('menu-item-has-children')) return;
-    document.body.classList.remove('nav-open');
+    const link = e.target
+    if (menuItem.classList.contains('menu-item-has-children') && !menuItem.classList.contains('active')) return;
+    e.preventDefault();
+
+    const href = link.getAttribute('href');
+
+    if (href.startsWith("#")) {
+      const sectionEl = document.querySelector(href);
+      const yOffset = this.header.offsetHeight;
+      const y = sectionEl.getBoundingClientRect().top + window.scrollY - yOffset;
+      window.scrollTo({top: y, behavior: 'smooth'});
+      document.body.classList.remove('nav-open');
+    }
   }
 
   handleBurgerClick = () => {

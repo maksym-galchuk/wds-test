@@ -74,25 +74,57 @@
 
   @media screen and (max-width: 1024px) {
     .splide {
-
       &__top {
         justify-content: center;
       }
-
-
       &__arrows {
         position: absolute;
         bottom: 0;
         right: 0;
         transform: translateY(50%);
       }
-
       &__pagination {
         margin-top: 30px;
-
         &__page {
           transform: translateY(100%);
         }
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    margin: 8rem auto;
+
+    .splide {
+      &__top {
+        margin-bottom: 40px;
+      }
+
+      &__title {
+        text-align: center;
+      }
+
+      &__arrows {
+        gap: 10px;
+      }
+
+      &__arrow {
+        width: 40px;
+        height: 40px;
+      }
+
+      &__slide {
+        gap: 30px;
+        flex-direction: column;
+        padding: 20px;
+        &-image, &-quote {
+          flex: unset;
+        }
+      }
+
+      &__pagination {
+        margin-top: 30px;
+        justify-content: flex-start;
       }
     }
   }

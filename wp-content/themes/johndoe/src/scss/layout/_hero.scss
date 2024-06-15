@@ -70,7 +70,9 @@
     &__description {
       margin-inline: auto;
     }
-
   }
 
+  @media screen and (max-width: 768px) {
+    padding-bottom: 50px;
+  }
 }
