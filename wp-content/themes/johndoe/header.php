@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <?php wp_head(); ?>
   <title><?php bloginfo('name'); ?></title>
+  <meta name="description" content="<?php bloginfo('description'); ?>">
 </head>
 <body <?php body_class(); ?>>
 <header class="header">
