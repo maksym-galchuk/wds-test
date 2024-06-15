@@ -1,6 +1,24 @@
 <?php get_header(); ?>
+<header class="header">
+  <div class="header__container">
+    <a class="header__logo" href="<?php echo home_url(); ?>">
+      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" alt="John Doe">
+    </a>
+    <?php
+      wp_nav_menu(
+        [
+          'theme_location' => 'johndoe_header_menu',
+          'container' => 'nav',
+          'container_class' => 'header__nav menu',
+          'menu_class' => 'header__menu-list menu__list',
+          'link_class' => 'header__menu-link menu__link'
+        ]
+      );
+    ?>
+  </div>
+</header>
 
-  <section class="hero" style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/hero-img.png);">
+  <section class="hero" style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/hero-img.png), linear-gradient(#f1f6f8, #f1f6f8);">
     <div class="hero__container">
       <h1 class="hero__title">John Doe</h1>
       <p class="hero__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dolor magna risus sed. Et dictumst vel.</p>
@@ -102,9 +120,9 @@
       [
         'theme_location' => 'johndoe_footer_menu',
         'container' => 'nav',
-        'container_class' => 'footer__nav',
-        'menu_class' => 'footer__menu-list',
-        'link_class' => 'footer__menu-link'
+        'container_class' => 'footer__nav menu',
+        'menu_class' => 'footer__menu-list menu__list',
+        'link_class' => 'footer__menu-link menu__link'
       ]
     );
   ?>
