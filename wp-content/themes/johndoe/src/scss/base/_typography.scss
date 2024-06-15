@@ -18,3 +18,48 @@
   font-weight: 400;
   font-style: normal;
 }
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 2.4rem;
+  letter-spacing: 0em;
+  color: var(--color-dark);
+}
+
+h1, h2, h3 {
+  font-family: "Italiana", serif;
+  font-weight: 400;
+  letter-spacing: .04em;
+}
+
+h1 {
+  font-size: 9rem;
+  line-height: 10.6rem;
+}
+
+h2, h3 {
+  font-size: 7rem;
+  line-height: 8.2rem;
+}
+
+.font-italic-lg {
+  font-style: italic;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 2.7rem;
+}
+
+.font-bold {
+  font-weight: 600;
+}
+
+.font-sm {
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+}

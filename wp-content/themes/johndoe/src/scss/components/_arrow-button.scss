@@ -1,0 +1,43 @@
+.arrow-btn {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px #E7E7E7;
+  background-color: var(--color-white);
+  transition: all .3s ease-in-out;
+  cursor: pointer;
+
+
+  svg {
+    transition: all .3s ease-in-out;
+  }
+
+  &:hover {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+
+    svg {
+      fill: var(--color-white);
+    }
+  }
+
+  &:focus-visible, &:active {
+    border-color: var(--color-accent-hover);
+    outline: solid 4px rgba(105, 174, 150, 0.4);
+    outline-offset: 0;
+  }
+
+  &:disabled, &.disabled {
+    color: #bbb9b9;
+    background-color: #e5e5e5;
+    border-color: #e5e5e5;
+    cursor: not-allowed;
+
+    svg {
+      fill: #bbb9b9;
+    }
+  }
+}

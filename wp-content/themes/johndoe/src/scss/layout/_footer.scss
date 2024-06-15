@@ -1,0 +1,37 @@
+
+
+
+
+.footer {
+  margin: 100px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+
+  &__menu-list {
+    display: flex;
+    list-style: none;
+    gap: 53px;
+  }
+
+  &__menu-link:any-link {
+    text-decoration: none;
+    color: var(--color-dark);
+
+    transition: all .3s ease-in-out;
+
+    &:hover {
+      font-weight: 500;
+    }
+    // fix shift on hover
+    &::before {
+      display: block;
+      content: attr(title);
+      font-weight: 500;
+      height: 0;
+      overflow: hidden;
+      visibility: hidden;
+    }
+  }
+}

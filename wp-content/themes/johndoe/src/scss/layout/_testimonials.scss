@@ -1,0 +1,74 @@
+.testimonials {
+  margin: 12rem auto;
+
+  .splide {
+    &__top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 62px;
+    }
+
+    &__title {
+      span {
+        color: var(--color-accent);
+      }
+    }
+
+    &__arrows {
+      display: flex;
+      gap: 20px;
+    }
+
+    &__arrow {
+      &:nth-child(2) {
+        rotate: 180deg;
+      }
+    }
+
+    &__slide {
+      display: flex;
+      gap: 50px;
+      border-radius: 10px;
+      background: var(--color-main-bg);
+      padding: 30px 40px 30px 30px;
+      align-items: center;
+
+      &-image {
+        flex: 1 1 550px;
+        border-radius: 10px;
+        box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.05);
+        overflow: hidden;
+      }
+      &-quote {
+        flex: 1 1 500px;
+      }
+      &-quote-text {
+        margin-bottom: 20px;
+      }
+      &-quote-author {
+        margin-bottom: 5px;
+      }
+    }
+
+    &__pagination {
+      display: flex;
+      gap: 12px;
+      margin-top: 60px;
+
+      &__page {
+        height: 12px;
+        width: 12px;
+        background: #e9e9e9;
+        border: none;
+        border-radius: 50%;
+        transition: all .3s ease-in-out;
+        cursor: pointer;
+
+        &.is-active {
+          background: var(--color-accent);
+        }
+      }
+    }
+  }
+}
