@@ -1,0 +1,47 @@
+.burger {
+  border: none;
+  background: none;
+  transition: all .3s;
+  cursor: pointer;
+
+
+
+
+  &__line {
+    position: absolute;
+    height: 4px;
+    border-radius: 1px;
+    background: var(--color-dark);
+    transform-origin: center center;
+    width: 100%;
+    transition: all .3s;
+    left: 0;
+
+    &:nth-child(1) {
+      top: 0;
+    }
+
+    &:nth-child(2), &:nth-child(3) {
+      top: 50%;
+      translate: 0 -50%;
+    }
+
+    &:nth-child(4) {
+      bottom: 0;
+    }
+  }
+}
+
+.nav-open .burger {
+  &__line:nth-child(1), &__line:nth-child(4) {
+    opacity: 0;
+  }
+
+  &__line:nth-child(2) {
+    rotate: 45deg;
+  }
+
+  &__line:nth-child(3) {
+    rotate: -45deg;
+  }
+}

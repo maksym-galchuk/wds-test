@@ -1,2 +1,4 @@
 import "./slider";
-import "./header";
+import Header from "./header";
+
+const header = new Header();

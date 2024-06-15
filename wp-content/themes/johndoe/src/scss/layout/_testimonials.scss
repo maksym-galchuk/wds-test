@@ -71,4 +71,29 @@
       }
     }
   }
+
+  @media screen and (max-width: 1024px) {
+    .splide {
+
+      &__top {
+        justify-content: center;
+      }
+
+
+      &__arrows {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        transform: translateY(50%);
+      }
+
+      &__pagination {
+        margin-top: 30px;
+
+        &__page {
+          transform: translateY(100%);
+        }
+      }
+    }
+  }
 }

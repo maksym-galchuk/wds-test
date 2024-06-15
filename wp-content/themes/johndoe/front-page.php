@@ -15,17 +15,26 @@
         ]
       );
     ?>
+    <button class="burger header__burger">
+      <span class="burger__line"></span>
+      <span class="burger__line"></span>
+      <span class="burger__line"></span>
+      <span class="burger__line"></span>
+    </button>
   </div>
 </header>
 
-  <section class="hero" style="background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/hero-img.png), linear-gradient(#f1f6f8, #f1f6f8);">
+  <section class="hero">
     <div class="hero__container">
       <h1 class="hero__title">John Doe</h1>
       <p class="hero__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dolor magna risus sed. Et dictumst vel.</p>
       <a href="#" class="hero__button btn">Free Seo Consulting Training</a>
     </div>
+    <div class="hero__image">
+      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/hero-img.png" alt="Hero Background Image">
+    </div>
   </section>
-  <section class="seo">
+  <section class="seo" id="about">
     <div class="seo__container">
       <div class="seo__text">
         <h2 class="seo__title">Superstar SEO</h2>
@@ -38,7 +47,7 @@
       </div>
     </div>
   </section>
-  <section class="testimonials container">
+  <section class="testimonials container" id="testimonials">
     <div class="splide">
       <div class="splide__top">
         <h2 class="splide__title">What My <span>Clients Say</h2>
@@ -97,12 +106,14 @@
       </div>
     </div>
   </section>
-<section class="cta">
+<section class="cta" id="contact">
   <div class="container cta__container">
     <div class="cta__col">
       <h2 class="cta__title">Get in Touch</h2>
-      <a href="mailto:hello@domainexample.com" class="cta__link">hello@domainexample.com</a>
-      <p class="cta__address">237 Haylee Islands Suite 960</p>
+      <div class="cta__bottom">
+        <a href="mailto:hello@domainexample.com" class="cta__link">hello@domainexample.com</a>
+        <p class="cta__address">237 Haylee Islands Suite 960</p>
+      </div>
     </div>
     <div class="cta__col">
       <?= do_shortcode('[hf_form slug="contact"]'); ?>
