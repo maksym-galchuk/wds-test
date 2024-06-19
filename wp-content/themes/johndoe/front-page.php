@@ -20,7 +20,7 @@
       </a>
     </div>
     <div class="hero__image">
-      <img src="<?= get_field('hero_image'); ?>" alt="Hero Background Image">
+      <img src="<?= get_field('hero_image')['url'] ?>" alt="<?= get_field('hero_image')['alt'] ?>">
     </div>
   </section>
   <section class="seo" id="about">
@@ -40,7 +40,7 @@
         </p>
       </div>
       <div class="seo__image">
-        <img src="<?= get_field('seo_image'); ?>" alt="SEO Image">
+        <img src="<?= get_field('seo_image')['url']; ?>" alt="<?= get_field('seo_image')['alt']; ?>">
       </div>
     </div>
   </section>
@@ -75,7 +75,7 @@
           foreach($testimonials as $testimonial) : ?>
             <li class="splide__slide">
               <div class="splide__slide-image">
-                <img src="<?= get_field('image', $testimonial); ?>" alt="Testimonial Image">
+                <img src="<?= get_field('image', $testimonial)['url']; ?>" alt="<?= get_field('image', $testimonial)['alt']; ?>">
               </div>
               <blockquote class="splide__slide-quote">
                 <p class="splide__slide-quote-text font-italic-lg">
