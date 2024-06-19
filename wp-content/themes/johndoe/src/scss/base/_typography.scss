@@ -1,20 +1,27 @@
 @font-face {
   font-family: "Montserrat";
-  src: url("../../fonts/Montserrat-VariableFont_wght.ttf") format("truetype-variations");
+  src:
+    url("../../fonts/Montserrat-VariableFont_wght.woff2") format("woff2 supports variations"),
+        url("../../fonts/Montserrat-VariableFont_wght.woff") format("woff supports variations"),
+        url("../../fonts/Montserrat-VariableFont_wght.ttf") format("truetype-variations");
   font-weight: 100 1000;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Montserrat";
-  src: url("../../fonts/Montserrat-Italic.ttf") format("truetype");
+  src: url("../../fonts/Montserrat-Italic.woff2") format("woff2"),
+        url("../../fonts/Montserrat-Italic.woff") format("woff"),
+        url("../../fonts/Montserrat-Italic.ttf") format("truetype");
   font-weight: 400;
   font-style: italic;
 }
 
 @font-face {
   font-family: "Italiana";
-  src: url("../../fonts/Italiana-Regular.ttf") format("truetype");
+  src: url("../../fonts/Italiana-Regular.woff2") format("woff2"),
+        url("../../fonts/Italiana-Regular.woff") format("woff"),
+        url("../../fonts/Italiana-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
