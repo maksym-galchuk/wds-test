@@ -55,9 +55,9 @@ function johndoe_menu_link_class($classes, $item, $args) {
 }
 add_filter('nav_menu_link_attributes', 'johndoe_menu_link_class', 1, 3);
 
-// Add title tag to menu link
+// Add data tag to menu link
 function johndoe_menu_link_title($atts, $item, $args) {
-  $atts['title'] = $item->title;
+  $atts['data-content'] = $item->title;
   return $atts;
 }
 add_filter('nav_menu_link_attributes', 'johndoe_menu_link_title', 1, 3);
