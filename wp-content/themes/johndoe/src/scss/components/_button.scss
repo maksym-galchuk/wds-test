@@ -1,6 +1,7 @@
 .btn {
   padding: 18px 59px;
   border: solid 2px transparent;
+  outline: solid 4px transparent;
   border-radius: 41px;
   box-shadow: 0 12px 24px 0 rgba(44, 39, 56, 0.08);
   background-color: var(--color-accent);
@@ -23,7 +24,8 @@
 
   &:focus-visible, &:active {
     border-color: var(--color-accent-hover);
-    outline: solid 4px rgba(105, 174, 150, 0.4);
+    outline-color: rgba(105, 174, 150, 0.4);
+    background-color: var(--color-accent);
     outline-offset: 0;
   }
 
