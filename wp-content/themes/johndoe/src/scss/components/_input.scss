@@ -2,11 +2,14 @@
   padding: 16px 24px;
   border-radius: 6px;
   border: 1px solid #C9CCD4;
+  outline: solid 4px transparent;
   background: #FFF;
-  transition: all .3s ease-in-out;
+  transition-property: border-color, outline-color;
+  transition-duration: .3s;
+  transition-timing-function: ease-in-out;
 
   &:focus-visible, &:active {
-    outline: solid 4px rgba(105, 174, 150, 0.4);
+    outline-color: rgba(105, 174, 150, 0.4);
     border-color: var(--color-accent-hover);
     outline-offset: 0;
   }
