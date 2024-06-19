@@ -22,39 +22,34 @@ export default class Header {
       this.isDesktop = window.innerWidth > 1024;
     });
 
-    this.itemsWithSubmenu.forEach((item) => {
-      item.addEventListener('click', this.handleSubmenu);
-    });
-    this.burger.addEventListener("click", this.handleBurgerClick);
+    this.burger.addEventListener("click", this.toggleNav);
     this.allMenuItems.forEach((item) => {
       item.addEventListener('click', this.handleMenuItemClick);
     } );
   }
 
   handleMenuItemClick = (e) => {
-    console.log("hi")
     const menuItem = e.target.closest('.menu-item');
     const link = e.target
-    if (menuItem.classList.contains('menu-item-has-children') && !menuItem.classList.contains('active')) return;
-    e.preventDefault();
+
+    if (menuItem.classList.contains('menu-item-has-children')) {
+      return this.handleSubmenu(e)
+    }
 
     const href = link.getAttribute('href');
 
     if (href.startsWith("#")) {
+      e.preventDefault();
       const sectionEl = document.querySelector(href);
       const yOffset = this.header.offsetHeight;
       const y = sectionEl.getBoundingClientRect().top + window.scrollY - yOffset;
       window.scrollTo({top: y, behavior: 'smooth'});
-      document.body.classList.remove('nav-open');
+      this.toggleNav();
     }
   }
 
-  handleBurgerClick = () => {
-    document.body.classList.toggle("nav-open");
-  }
-
-  observer() {
-    const observer = new IntersectionObserver(this.handleIntersection.bind(this), {
+  observer = () => {
+    const observer = new IntersectionObserver(this.handleIntersection, {
       root: null,
       threshold: 0,
       rootMargin: '-80px',
@@ -62,7 +57,7 @@ export default class Header {
     observer.observe(this.hero);
   }
 
-  handleIntersection(entries) {
+  handleIntersection = (entries) => {
     const ent = entries[0];
     if (!ent.isIntersecting) {
       if (this.timeout) {
@@ -84,19 +79,23 @@ export default class Header {
     if (this.isDesktop) {
       return;
     }
+    e.preventDefault();
     if (menuItem.classList.contains('active')) {
       menuItem.classList.remove('active');
-      document.body.classList.remove('nav-open');
       return;
     }
-    e.preventDefault();
-    console.log(this)
     this.itemsWithSubmenu.forEach((item) => {
-      console.log(item, menuItem)
       if (item !== menuItem) {
         item.classList.remove('active');
       }
     });
     menuItem.classList.add('active');
+  }
+
+  toggleNav = () => {
+    document.body.classList.toggle('nav-open');
+    this.itemsWithSubmenu.forEach((item) => {
+      item.classList.remove('active');
+    });
   }
 }
