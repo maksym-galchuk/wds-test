@@ -8,7 +8,7 @@
   transition-duration: .3s;
   transition-timing-function: ease-in-out;
 
-  &:focus-visible, &:active {
+  &:focus {
     outline-color: rgba(105, 174, 150, 0.4);
     border-color: var(--color-accent-hover);
     outline-offset: 0;
